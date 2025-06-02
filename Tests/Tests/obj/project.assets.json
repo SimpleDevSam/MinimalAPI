@@ -8709,6 +8709,9 @@
           "projectReferences": {
             "C:\\Dev\\Minimal Api\\MinimalAPIOld\\MinimalAPI.csproj": {
               "projectPath": "C:\\Dev\\Minimal Api\\MinimalAPIOld\\MinimalAPI.csproj"
+            },
+            "C:\\Dev\\Minimal Api\\MinimalAPI\\MinimalAPI.csproj": {
+              "projectPath": "C:\\Dev\\Minimal Api\\MinimalAPI\\MinimalAPI.csproj"
             }
           }
         }
