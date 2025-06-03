@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.DataProtection.Repositories;
 using Microsoft.EntityFrameworkCore;
 using MinimalAPI_KeyCloack.Application.Validators;
+using System;
 
 namespace MinimalAPI_KeyCloack.DependencyInjection
 {
@@ -17,13 +18,11 @@ namespace MinimalAPI_KeyCloack.DependencyInjection
             var dbFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "data");
             Directory.CreateDirectory(dbFolder); 
 
-
             var dbPath = Path.Combine(dbFolder, "app.db");
-
-            Console.WriteLine("Using SQLite DB at: " + dbPath); 
-
+            Console.WriteLine("Using SQLite DB at: " + dbPath);
+            Console.WriteLine("AppSettings Line SQLite DB at: " + config.GetConnectionString("DefaultConnection"));
             services.AddDbContext<AppDbContext>(options =>
-                options.UseSqlite($"Data Source={dbPath}"));
+                options.UseSqlite(config.GetConnectionString("DefaultConnection")));
 
             return services;
         }
