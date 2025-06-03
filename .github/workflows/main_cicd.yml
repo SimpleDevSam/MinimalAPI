@@ -23,11 +23,20 @@ jobs:
         with:
           dotnet-version: '8.0'
 
+      - name: Install EF Core CLI tools
+        run: dotnet tool install --global dotnet-ef
+        
       - name: Build with dotnet
         run: dotnet build ./MinimalAPI/MinimalAPI.sln --configuration Release
 
       - name: dotnet publish
         run: dotnet publish ./MinimalAPI/MinimalAPI.csproj  -c Release -o ${{env.DOTNET_ROOT}}/myapp
+        
+      - name: Apply EF Core Migrations
+        run: dotnet ef database update --project ./MinimalAPI/MinimalAPI.csproj --context AppDbContext
+        env:
+          ASPNETCORE_ENVIRONMENT: Production
+
 
       - name: Upload artifact for deployment job
         uses: actions/upload-artifact@v4
