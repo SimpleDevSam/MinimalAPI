@@ -25,6 +25,7 @@ using (var scope = app.Services.CreateScope())
     await db.Database.MigrateAsync();
 }
 
+//////
 //Directory.CreateDirectory("/home/data");
 
 app.UseHttpsRedirection();
