@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using MinimalAPI_KeyCloack.Application.Validators;
 using MinimalAPI_KeyCloack.DependencyInjection;
 using MinimalAPI_KeyCloack.WebAPI.Extensions;
@@ -16,6 +17,12 @@ if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
     app.UseSwagger();
     app.UseSwaggerUI();
+}
+
+using (var scope = app.Services.CreateScope())
+{
+    var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    await db.Database.MigrateAsync();
 }
 
 app.UseHttpsRedirection();
