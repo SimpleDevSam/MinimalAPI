@@ -20,7 +20,7 @@ jobs:
         uses: actions/setup-dotnet@v4
         with:
           dotnet-version: '8.0'
-          
+
       - name: Restore dependencies
         run: dotnet restore ./MinimalAPI/MinimalAPI.sln
         
@@ -28,7 +28,7 @@ jobs:
         run: dotnet build ./MinimalAPI/MinimalAPI.sln --configuration Release
       
       - name: Run Tests
-        run: dotnet test ./Tests/Tests/Tests.csproj --no-build --verbosity normal
+        run: dotnet test ../Tests/Tests/Tests.csproj --no-build --verbosity normal
 
 
   deploy:
