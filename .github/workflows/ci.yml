@@ -30,7 +30,6 @@ jobs:
       - name: Test
         run: dotnet test Tests/Tests/Tests.csproj --no-build --verbosity normal
 
-
   deploy:
     runs-on: ubuntu-latest
     needs: build
