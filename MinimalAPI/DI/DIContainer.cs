@@ -14,10 +14,13 @@ namespace MinimalAPI_KeyCloack.DependencyInjection
 
         public static IServiceCollection AddDataAccessServices(this IServiceCollection services, IConfiguration config)
         {
-            var dbFolder = "/home/data";
-            Directory.CreateDirectory(dbFolder); // Make sure folder exists
+            var dbFolder = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "data");
+            Directory.CreateDirectory(dbFolder); 
+
 
             var dbPath = Path.Combine(dbFolder, "app.db");
+
+            Console.WriteLine("Using SQLite DB at: " + dbPath); 
 
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlite($"Data Source={dbPath}"));
