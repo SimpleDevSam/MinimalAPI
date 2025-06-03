@@ -8658,12 +8658,13 @@
     },
     "MinimalAPI/1.0.0": {
       "type": "project",
-      "path": "../../MinimalAPIOld/MinimalAPI.csproj",
-      "msbuildProject": "../../MinimalAPIOld/MinimalAPI.csproj"
+      "path": "../../MinimalAPI/MinimalAPI.csproj",
+      "msbuildProject": "../../MinimalAPI/MinimalAPI.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0": [
+      "C:\\Dev\\Minimal Api\\MinimalAPI\\MinimalAPI\\MinimalAPIOld\\MinimalAPI.csproj",
       "Microsoft.AspNetCore.Hosting.Abstractions >= 2.3.0",
       "Microsoft.AspNetCore.Mvc.Testing >= 8.0.16",
       "Microsoft.Data.Sqlite.Core >= 9.0.5",
@@ -8682,11 +8683,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Dev\\Minimal Api\\Tests\\Tests\\Tests.csproj",
+      "projectUniqueName": "C:\\Dev\\Minimal Api\\MinimalAPI\\MinimalAPI\\Tests\\Tests\\Tests.csproj",
       "projectName": "Tests",
-      "projectPath": "C:\\Dev\\Minimal Api\\Tests\\Tests\\Tests.csproj",
+      "projectPath": "C:\\Dev\\Minimal Api\\MinimalAPI\\MinimalAPI\\Tests\\Tests\\Tests.csproj",
       "packagesPath": "C:\\Users\\samuel.assis\\.nuget\\packages\\",
-      "outputPath": "C:\\Dev\\Minimal Api\\Tests\\Tests\\obj\\",
+      "outputPath": "C:\\Dev\\Minimal Api\\MinimalAPI\\MinimalAPI\\Tests\\Tests\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -8707,11 +8708,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Dev\\Minimal Api\\MinimalAPIOld\\MinimalAPI.csproj": {
-              "projectPath": "C:\\Dev\\Minimal Api\\MinimalAPIOld\\MinimalAPI.csproj"
+            "C:\\Dev\\Minimal Api\\MinimalAPI\\MinimalAPI\\MinimalAPIOld\\MinimalAPI.csproj": {
+              "projectPath": "C:\\Dev\\Minimal Api\\MinimalAPI\\MinimalAPI\\MinimalAPIOld\\MinimalAPI.csproj"
             },
-            "C:\\Dev\\Minimal Api\\MinimalAPI\\MinimalAPI.csproj": {
-              "projectPath": "C:\\Dev\\Minimal Api\\MinimalAPI\\MinimalAPI.csproj"
+            "C:\\Dev\\Minimal Api\\MinimalAPI\\MinimalAPI\\MinimalAPI\\MinimalAPI.csproj": {
+              "projectPath": "C:\\Dev\\Minimal Api\\MinimalAPI\\MinimalAPI\\MinimalAPI\\MinimalAPI.csproj"
             }
           }
         }
@@ -8784,5 +8785,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.201/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Não é possível encontrar o projeto 'C:\\Dev\\Minimal Api\\MinimalAPI\\MinimalAPI\\MinimalAPIOld\\MinimalAPI.csproj'. Verifique se a referência do projeto é válida e se o arquivo de projeto existe.",
+      "libraryId": "C:\\Dev\\Minimal Api\\MinimalAPI\\MinimalAPI\\MinimalAPIOld\\MinimalAPI.csproj",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }
