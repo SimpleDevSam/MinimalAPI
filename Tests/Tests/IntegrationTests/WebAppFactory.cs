@@ -19,7 +19,20 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
             _connection = new SqliteConnection("DataSource=:memory:");
             _connection.Open();
 
-            builder.UseSolutionRelativeContentRoot("MinimalAPI/MinimalAPI");
+            var cwd = Directory.GetCurrentDirectory();
+            // cwd might be "/home/runner/.../Tests/Tests/bin/Debug/net8.0"
+            // Walk up four levels, then down into "MinimalAPI/MinimalAPI"
+            var projectRoot = Path.GetFullPath(Path.Combine(
+                cwd,
+                "..",   // up to net8.0
+                "..",   // up to bin
+                "..",   // up to Tests/Tests
+                "..",   // up to MinimalAPI/MinimalAPI (level 2)
+                "MinimalAPI", // now level 3
+                "MinimalAPI"  // now level 4 → actual WebAPI folder
+            ));
+            Console.WriteLine($"[Diagnostics] Computed API folder: {projectRoot}");
+            builder.UseContentRoot(projectRoot);
 
 
             var descriptor = services.SingleOrDefault(
