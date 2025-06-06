@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc.Testing;
+using Microsoft.AspNetCore.TestHost;
 using Microsoft.Data.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
@@ -14,7 +15,7 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
     {
         builder.ConfigureServices(services =>
         {
-            builder.UseContentRoot(Directory.GetCurrentDirectory());
+            builder.UseSolutionRelativeContentRoot("MinimalApi/MinimalAPI");
 
             _connection = new SqliteConnection("DataSource=:memory:");
             _connection.Open();

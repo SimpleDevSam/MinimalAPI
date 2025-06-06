@@ -2249,6 +2249,25 @@
         }
       },
       "xunit.runner.visualstudio/2.5.3": {},
+      "MinimalAPI/1.0.0": {
+        "dependencies": {
+          "FluentValidation": "11.11.0",
+          "FluentValidation.AspNetCore": "11.3.0",
+          "Microsoft.AspNetCore.OpenApi": "8.0.14",
+          "Microsoft.Data.Sqlite": "9.0.4",
+          "Microsoft.EntityFrameworkCore.Sqlite": "9.0.4",
+          "Swashbuckle.AspNetCore": "6.6.2"
+        },
+        "runtime": {
+          "MinimalAPI.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        },
+        "compile": {
+          "MinimalAPI.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Antiforgery/8.0.0.0": {
         "compile": {
           "Microsoft.AspNetCore.Antiforgery.dll": {}
@@ -3976,17 +3995,6 @@
           "WindowsBase.dll": {}
         },
         "compileOnly": true
-      },
-      "MinimalAPI/1.0.0": {
-        "dependencies": {
-          "FluentValidation": "11.11.0",
-          "FluentValidation.AspNetCore": "11.3.0",
-          "Microsoft.AspNetCore.OpenApi": "8.0.14",
-          "Microsoft.Data.Sqlite": "9.0.4",
-          "Microsoft.EntityFrameworkCore.Sqlite": "9.0.4",
-          "Swashbuckle.AspNetCore": "6.6.2"
-        },
-        "compileOnly": true
       }
     }
   },
@@ -5059,6 +5067,11 @@
       "sha512": "sha512-HFFL6O+QLEOfs555SqHii48ovVa4CqGYanY+B32BjLpPptdE+wEJmCFNXlLHdEOD5LYeayb9EroaUpydGpcybg==",
       "path": "xunit.runner.visualstudio/2.5.3",
       "hashPath": "xunit.runner.visualstudio.2.5.3.nupkg.sha512"
+    },
+    "MinimalAPI/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "Microsoft.AspNetCore.Antiforgery/8.0.0.0": {
       "type": "referenceassembly",
@@ -6497,11 +6510,6 @@
     },
     "WindowsBase/4.0.0.0": {
       "type": "referenceassembly",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "MinimalAPI/1.0.0": {
-      "type": "project",
       "serviceable": false,
       "sha512": ""
     }
