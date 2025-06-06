@@ -11,12 +11,11 @@ namespace Tests.IntegrationTests;
 public class CustomWebApplicationFactory : WebApplicationFactory<Program>
 {
     private SqliteConnection? _connection;
+
     protected override void ConfigureWebHost(IWebHostBuilder builder)
     {
         builder.ConfigureServices(services =>
         {
-            builder.UseSolutionRelativeContentRoot("MinimalApi/MinimalAPI");
-
             _connection = new SqliteConnection("DataSource=:memory:");
             _connection.Open();
 
@@ -32,6 +31,8 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
             using var scope = sp.CreateScope();
             var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
             db.Database.Migrate();
+            Console.WriteLine("[Diagnostics] In-memory SQLite: db.Database.Migrate() ran");
+
 
             services.AddSingleton(_connection);
         });
@@ -41,7 +42,9 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
     {
         if (disposing)
         {
-            _connection?.Dispose(); // Dispose connection directly
+            _connection?.Dispose();
+            Console.WriteLine("[Diagnostics] Disposed in-memory SQLite connection");
+
         }
 
         base.Dispose(disposing);
