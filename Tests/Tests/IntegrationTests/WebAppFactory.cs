@@ -14,6 +14,8 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
     {
         builder.ConfigureServices(services =>
         {
+            builder.UseContentRoot(Directory.GetCurrentDirectory());
+
             _connection = new SqliteConnection("DataSource=:memory:");
             _connection.Open();
 

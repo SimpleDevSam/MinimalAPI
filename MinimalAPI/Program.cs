@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore;
-using MinimalAPI_KeyCloack.Application.Validators;
 using MinimalAPI_KeyCloack.DependencyInjection;
 using MinimalAPI_KeyCloack.WebAPI.Extensions;
 
