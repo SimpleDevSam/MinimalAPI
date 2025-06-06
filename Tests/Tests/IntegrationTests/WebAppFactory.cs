@@ -20,18 +20,36 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
             _connection.Open();
 
             var cwd = Directory.GetCurrentDirectory();
-            // cwd might be "/home/runner/.../Tests/Tests/bin/Debug/net8.0"
-            // Walk up four levels, then down into "MinimalAPI/MinimalAPI"
-            var projectRoot = Path.GetFullPath(Path.Combine(
-                cwd,
-                "..",   // up to net8.0
-                "..",   // up to bin
-                "..",   // up to Tests/Tests
-                "..",   // up to MinimalAPI/MinimalAPI (level 2)
-                "MinimalAPI", // now level 3
-                "MinimalAPI"  // now level 4 → actual WebAPI folder
-            ));
-            Console.WriteLine($"[Diagnostics] Computed API folder: {projectRoot}");
+            Console.WriteLine($"[Diagnostics] Test CWD: {cwd}");
+
+            // ─── STEP 2: Climb up folders until we find "MinimalAPI.csproj" ───
+            // We assume your WebAPI project file is named "MinimalAPI.csproj".
+            // If yours is named differently, change the string below.
+            var dir = new DirectoryInfo(cwd);
+            DirectoryInfo? webApiFolder = null;
+
+            while (dir != null)
+            {
+                // Check for the .csproj file inside this directory:
+                if (dir.EnumerateFiles("MinimalAPI.csproj", SearchOption.TopDirectoryOnly).Any())
+                {
+                    webApiFolder = dir;
+                    break;
+                }
+
+                dir = dir.Parent;
+            }
+
+            if (webApiFolder == null)
+            {
+                throw new DirectoryNotFoundException(
+                    $"Could not find MinimalAPI.csproj by climbing up from '{cwd}'.");
+            }
+
+            var projectRoot = webApiFolder.FullName;
+            Console.WriteLine($"[Diagnostics] Resolved WebAPI folder (content root): {projectRoot}");
+
+            // ─── STEP 3: Tell ASP.NET to use that folder as content root ───
             builder.UseContentRoot(projectRoot);
 
 
