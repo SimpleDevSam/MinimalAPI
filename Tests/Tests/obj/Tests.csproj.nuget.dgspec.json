@@ -132,6 +132,9 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
+              "C:\\Dev\\Minimal Api\\MinimalAPI\\MinimalAPI\\MinimalAPIOld\\MinimalAPI.csproj": {
+                "projectPath": "C:\\Dev\\Minimal Api\\MinimalAPI\\MinimalAPI\\MinimalAPIOld\\MinimalAPI.csproj"
+              },
               "C:\\Dev\\Minimal Api\\MinimalAPI\\MinimalAPI\\MinimalAPI\\MinimalAPI.csproj": {
                 "projectPath": "C:\\Dev\\Minimal Api\\MinimalAPI\\MinimalAPI\\MinimalAPI\\MinimalAPI.csproj"
               }

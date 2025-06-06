@@ -1,7 +1,7 @@
 {
   "version": 2,
-  "dgSpecHash": "sNC3j1x7UXQ=",
-  "success": true,
+  "dgSpecHash": "bmiRPSnfJVs=",
+  "success": false,
   "projectFilePath": "C:\\Dev\\Minimal Api\\MinimalAPI\\MinimalAPI\\Tests\\Tests\\Tests.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\samuel.assis\\.nuget\\packages\\coverlet.collector\\6.0.0\\coverlet.collector.6.0.0.nupkg.sha512",
@@ -157,5 +157,15 @@
     "C:\\Users\\samuel.assis\\.nuget\\packages\\xunit.extensibility.execution\\2.5.3\\xunit.extensibility.execution.2.5.3.nupkg.sha512",
     "C:\\Users\\samuel.assis\\.nuget\\packages\\xunit.runner.visualstudio\\2.5.3\\xunit.runner.visualstudio.2.5.3.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1104",
+      "level": "Error",
+      "message": "Não é possível encontrar o projeto 'C:\\Dev\\Minimal Api\\MinimalAPI\\MinimalAPI\\MinimalAPIOld\\MinimalAPI.csproj'. Verifique se a referência do projeto é válida e se o arquivo de projeto existe.",
+      "libraryId": "C:\\Dev\\Minimal Api\\MinimalAPI\\MinimalAPI\\MinimalAPIOld\\MinimalAPI.csproj",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }
