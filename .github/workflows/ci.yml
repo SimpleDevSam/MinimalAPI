@@ -28,7 +28,7 @@ jobs:
         run: dotnet build ./MinimalAPI/MinimalAPI.sln --configuration Release
       
       - name: Test
-        run: dotnet test Tests/Tests/Tests.csproj --no-build --verbosity normal
+        run: dotnet test .\MinimalAPI\MinimalAPI\Tests\Tests\Tests.csproj ` --configuration Debug --no-build
 
   deploy:
     runs-on: ubuntu-latest
