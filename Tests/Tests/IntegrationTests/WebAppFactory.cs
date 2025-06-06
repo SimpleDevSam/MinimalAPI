@@ -19,6 +19,9 @@ public class CustomWebApplicationFactory : WebApplicationFactory<Program>
             _connection = new SqliteConnection("DataSource=:memory:");
             _connection.Open();
 
+            builder.UseSolutionRelativeContentRoot("MinimalAPI/MinimalAPI");
+
+
             var descriptor = services.SingleOrDefault(
                 d => d.ServiceType == typeof(DbContextOptions<AppDbContext>));
             if (descriptor != null)
