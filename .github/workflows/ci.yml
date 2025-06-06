@@ -31,7 +31,7 @@ jobs:
         run: dotnet test .\MinimalAPI\MinimalAPI\Tests\Tests\Tests.csproj ` --configuration Debug --no-build
 
   deploy:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     needs: build
     environment:
       name: 'Production'
