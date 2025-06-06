@@ -28,7 +28,7 @@ jobs:
         run: dotnet build ./MinimalAPI/MinimalAPI.sln --configuration Release
       
       - name: Test
-        run: dotnet test .\Tests\Tests\Tests.csproj"
+        run: dotnet test .\Tests\Tests\Tests.csproj
 
   deploy:
     runs-on: windows-latest
